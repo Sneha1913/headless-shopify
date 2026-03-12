@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Maison — Home Décor</title>
+  <meta name="description" content="Curated home décor. Timeless pieces for modern living."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <nav class="header-nav">
+        <a href="#" class="nav-link active">All</a>
+        <a href="#" class="nav-link" data-filter="Living">Living</a>
+        <a href="#" class="nav-link" data-filter="Kitchen">Kitchen</a>
+        <a href="#" class="nav-link" data-filter="Bedroom">Bedroom</a>
+      </nav>
+
+      <a href="index.html" class="site-logo">Maison</a>
+
+      <div class="header-actions">
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-count" id="cartCount" style="display:none">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-sub">New Collection 2026</p>
+      <h1 class="hero-title">Spaces that<br/><em>feel like home</em></h1>
+      <p class="hero-desc">Thoughtfully crafted pieces for every corner of your home.</p>
+      <a href="#products" class="hero-cta">Explore Collection</a>
+    </div>
+    <div class="hero-image-grid">
+      <div class="hero-img hero-img--tall" id="heroImg1"></div>
+      <div class="hero-img hero-img--short" id="heroImg2"></div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products-section" id="products">
+    <div class="products-header">
+      <h2 class="products-title">The Collection</h2>
+      <div class="sort-wrap">
+        <select id="sortSelect" class="sort-select">
+          <option value="default">Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+          <option value="name-asc">Name A–Z</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="products-grid" id="productsGrid">
+      <!-- Skeletons -->
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+      <div class="skeleton-card"></div>
+    </div>
+
+    <div class="load-more-wrap" id="loadMoreWrap" style="display:none">
+      <button class="load-more-btn" id="loadMoreBtn">Load More</button>
+    </div>
+  </section>
+
+  <!-- CART DRAWER -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="cart-header">
+      <h3 class="cart-title">Your Cart</h3>
+      <button class="cart-close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <p>Your cart is empty.</p>
+        <span>Add something beautiful.</span>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span id="cartSubtotal">$0.00</span>
+      </div>
+      <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+      <p class="cart-note">Taxes and shipping calculated at checkout</p>
+    </div>
+  </aside>
+
+  <!-- CONFIG MODAL -->
+  <div class="config-overlay" id="configOverlay">
+    <div class="config-modal">
+      <div class="config-logo">Maison</div>
+      <h2>Connect Your Store</h2>
+      <p class="config-sub">Enter your Shopify Storefront API credentials to load real products, or use demo data to preview.</p>
+      <div class="field">
+        <label>Store Domain</label>
+        <input type="text" id="storeDomain" placeholder="your-store.myshopify.com"/>
+      </div>
+      <div class="field">
+        <label>Storefront Access Token</label>
+        <input type="text" id="storefrontToken" placeholder="shpat_xxxxxxxxxxxx"/>
+      </div>
+      <div class="config-btns">
+        <button class="btn-outline" id="useDemoBtn">Use Demo Data</button>
+        <button class="btn-primary" id="connectBtn">Connect Store</button>
+      </div>
+      <p class="config-status" id="configStatus"></p>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-logo">Maison</span>
+      <span class="footer-copy">Headless Shopify Storefront — Built with Storefront API</span>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
